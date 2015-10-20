@@ -1,0 +1,23 @@
+﻿<Window x:Class="TIiK_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TIiK_1"
+        mc:Ignorable="d"
+        Title="TIiK_1_KonradWitkowski" Height="700" Width="997">
+    <Grid Height="700" VerticalAlignment="Top" HorizontalAlignment="Left" Width="994">
+        <TextBox x:Name="Wyj1TextBox" HorizontalAlignment="Left" Height="440" Margin="10,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="462"/>
+        <TextBox x:Name="Wyj2TextBox" HorizontalAlignment="Left" Height="440" Margin="501,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="474"/>
+        <Button x:Name="Wykonaj" Content="Start"  Click="Wykonaj_Click" FontSize="20" FontWeight="Bold" IsEnabled="False" Margin="432,10,452,616"/>
+        <Button x:Name="Wczytaj2" Content="Wczytaj plik 2" HorizontalAlignment="Left" Margin="501,135,0,0" VerticalAlignment="Top" Width="139" Click="button_Copy_Click" Height="31"/>
+        <Button x:Name="Wczytaj1" Content="Wczytaj plik 1" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="136" Click="button_Copy1_Click" Height="31" RenderTransformOrigin="-0.004,0.161"/>
+        <Label x:Name="label" Content="Po wczytaniu 2 plików kliknij Start w celu wykonania programu, wynik przedstawiony sostanie w poniższych okienkach" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Height="45" Width="640"/>
+        <Label x:Name="label1" Content="Wynik 1:" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.752,-0.91" Height="31"/>
+        <Label x:Name="label1_Copy" Content="Wynik 2:" HorizontalAlignment="Left" Margin="501,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.752,-0.91" Height="31"/>
+        <Button x:Name="Zapisz" Content="Zapisz wyniki" HorizontalAlignment="Left" Margin="878,10,0,670" Width="75" Click="Zapisz_Click" IsEnabled="False"/>
+        <Button x:Name="Wykresy" Content="Wykres kolowy 1" HorizontalAlignment="Left" Margin="847,63,0,617" Width="106" Click="Wykresy_Click" IsEnabled="False"/>
+        <Button x:Name="Wykresy_Copy" Content="Wykres kolowy 2" HorizontalAlignment="Left" Margin="847,88,0,592" Width="106" Click="Wykresy2_Click" IsEnabled="False"/>
+
+    </Grid>
+</Window>
