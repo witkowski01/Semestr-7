@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace TIiK_1
             System.IO.StreamWriter file = new System.IO.StreamWriter(@"temp");
             var dictionary = text.GroupBy(i => i).Distinct().ToDictionary(i => i.Key, i => i.Count());
             var dictionary2 = dictionary.OrderBy(i => i.Key);
+
+            double Entropia=0;
+            double sumaIE = 0;
+
             foreach (var i in dictionary2)
             {
                 double PofE = ((double)i.Value / (double)text.Length);
@@ -22,11 +27,18 @@ namespace TIiK_1
                 double oneByProbability = (1 / PofE);
                 //binary unit log2 1/p(E)
                 var BinaryUnit = Math.Log(oneByProbability, 2);
+
+                Entropia += PofE*BinaryUnit;
+                sumaIE += BinaryUnit;
+
                 string line = ("Key:" + i.Key + "--Count:" + i.Value + "--I(E):" + BinaryUnit + "--" + Math.Round(procent, 6) + "%\n");
 
                 file.WriteLine(line);
 
             }
+            sumaIE = sumaIE/dictionary.Count;
+            file.WriteLine("Entropia wynosi:  "+ Entropia +"  ");
+            file.WriteLine("Suma I(E) wynosi:  " + sumaIE + "  ");
             file.Close();
             var wynik = System.IO.File.ReadAllText(@"temp");
             return wynik;
